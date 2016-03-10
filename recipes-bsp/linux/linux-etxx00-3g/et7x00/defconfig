@@ -3,7 +3,7 @@
 # Linux/mips 3.18.24 Kernel Configuration
 #
 CONFIG_MIPS=y
-.
+
 #
 # Machine selection
 #
