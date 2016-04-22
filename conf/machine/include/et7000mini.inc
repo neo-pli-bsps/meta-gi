@@ -22,7 +22,7 @@ DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3"
 TARGET_ARCH = "mipsel"
 DEFAULTTUNE = "mips32el"
 
-PREFERRED_PROVIDER_virtual/kernel = "linux-etxx00-3g"
+PREFERRED_PROVIDER_virtual/kernel = "linux-et7000mini"
 
 PREFERRED_PROVIDER_virtual/blindscan-dvbc = "et-blindscan-dvbc-utils-${MACHINE}"
 
@@ -37,7 +37,8 @@ UBI_VOLNAME = "rootfs"
 MKUBIFS_ARGS = "-m 2048 -e 126976 -c 8192"
 UBINIZE_ARGS = "-m 2048 -p 128KiB"
 
-IMAGEDIR ?= "${MACHINE}"
+#IMAGEDIR ?= "${MACHINE}"
+IMAGEDIR ?= "et7x00"
 
 IMAGE_CMD_ubi_append = " \
 	mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
