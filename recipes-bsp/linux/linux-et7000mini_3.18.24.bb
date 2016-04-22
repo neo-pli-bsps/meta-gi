@@ -5,10 +5,10 @@ LICENSE = "GPLv2"
 COMPATIBLE_MACHINE = "et[7,3,8]+"
 
 KERNEL_RELEASE = "3.18.24"
-SRCDATE = "20151109"
+SRCDATE = "20160421"
 
-SRC_URI[md5sum] = "b7b64609db25ae28e85dd0549ee697a4"
-SRC_URI[sha256sum] = "ef2dbd871ae67ca9dafeedd21668338b9bc929258f67867bef8efdf9b0ee5b15"
+SRC_URI[md5sum] = "76b7b50307cddf1b30ba63c16af95e52"
+SRC_URI[sha256sum] = "35ec09f2c959c891fd8916430043be11a46493844708225f64680b9d25d7411b"
 
 LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${PV}/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
@@ -22,7 +22,7 @@ PKG_kernel-image = "kernel-image"
 RPROVIDES_kernel-base = "kernel-${KERNEL_VERSION}"
 RPROVIDES_kernel-image = "kernel-image-${KERNEL_VERSION}"
 
-SRC_URI += "http://xtrendet.net/xtrend-linux-${PV}-${SRCDATE}.tar.gz \
+SRC_URI += "http://gi-et-7000-mini.eu/linux-${PV}-${SRCDATE}.tar.xz \
 	file://defconfig \
 	file://add-dmx-source-timecode.patch \
 	file://af9015-output-full-range-SNR.patch \
