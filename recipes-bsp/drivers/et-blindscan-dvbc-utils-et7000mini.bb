@@ -5,7 +5,7 @@ LICENSE = "CLOSED"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-SRC_URI = "http://xtrendet.net/${MACHINE}-dvbc-blindscan-${PV}.zip"
+SRC_URI = "http://gi-et-7000-mini.eu/${MACHINE}-dvbc-blindscan-${PV}.zip"
 
 PROVIDES += "virtual/blindscan-dvbc"
 RPROVIDES_${PN} += "virtual/blindscan-dvbc"
