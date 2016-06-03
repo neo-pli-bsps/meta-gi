@@ -1,5 +1,5 @@
 KV = "4.1.21"
-SRCDATE = "20160428"
+SRCDATE = "20160601"
 GCC = "4.9.1"
 
 require et-dvb-modules.inc
