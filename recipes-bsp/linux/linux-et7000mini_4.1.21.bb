@@ -22,7 +22,7 @@ PKG_kernel-image = "kernel-image"
 RPROVIDES_kernel-base = "kernel-${KERNEL_VERSION}"
 RPROVIDES_kernel-image = "kernel-image-${KERNEL_VERSION}"
 
-SRC_URI += "http://gi-et-7000-mini.eu/linux-${PV}.tar.xz \
+SRC_URI += "http://gi-et.info/et7000mini/linux-${PV}.tar.xz \
 	file://defconfig \
 		"
 

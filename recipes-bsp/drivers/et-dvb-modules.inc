@@ -6,7 +6,7 @@ LICENSE = "CLOSED"
 PV = "${KV}+${SRCDATE}"
 PR = "r0"
 
-SRC_URI = "http://gi-et-7000-mini.eu/${MACHINE}-drivers-${KV}-${GCC}-${SRCDATE}.zip"
+SRC_URI = "http://gi-et.info/et7000mini/${MACHINE}-drivers-${KV}-${GCC}-${SRCDATE}.zip"
 
 S = "${WORKDIR}"
 
