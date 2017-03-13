@@ -23,6 +23,7 @@ RPROVIDES_kernel-base = "kernel-${KERNEL_VERSION}"
 RPROVIDES_kernel-image = "kernel-image-${KERNEL_VERSION}"
 
 SRC_URI += "http://gi-et.info/et7000mini/linux-${PV}.tar.xz \
+	file://kernel-gcc6.patch \
 	file://defconfig \
 		"
 
