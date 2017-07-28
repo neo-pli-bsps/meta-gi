@@ -58,9 +58,7 @@ IMAGE_CMD_tar_prepend = "\
     rm -Rf ${IMAGEDIR}; \
 "
 
-MACHINE_FEATURES += "alsa 3dtv switchoff hdmicec omb"
-
-MACHINE_FEATURES += "ci textlcd videoenhancement skins1080 et-hbbtv-browser"
+MACHINE_FEATURES += "3dtv 7segment alsa ci hdmicec mmc switchoff textlcd wlan kernelwifi extrakernelwifi"
 
 PREFERRED_VERSION_directfb = "1.7.7"
 
