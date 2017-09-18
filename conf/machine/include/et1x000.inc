@@ -23,7 +23,7 @@ MACHINE_EXTRA_RRECOMMENDS = " \
 TARGET_ARCH = "arm"
 DEFAULTTUNE = "armv7ahf-neon"
 
-DVBMEDIASINK_CONFIG = "--with-h265 --with-vb8 --with-vb9 --with-wma --with-wmv --with-pcm --with-dtsdownmix --with-eac3"
+DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dtsdownmix --with-eac3"
 
 PREFERRED_VERSION_linux-${MACHINE} = "4.1.37"
 
