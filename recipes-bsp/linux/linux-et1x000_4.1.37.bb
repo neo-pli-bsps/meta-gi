@@ -32,6 +32,8 @@ SRC_URI += "http://gi-et.info/et1x000/linux-${PV}-${SRC}.tar.xz \
     file://0001-STV-Add-SNR-Signal-report-parameters.patch \
     file://blindscan2.patch \
     file://0001-stv090x-optimized-TS-sync-control.patch \
+    file://0002-log2-give-up-on-gcc-constant-optimizations.patch \
+    file://0003-dont-mark-register-as-const.patch \
     "
 
 S = "${WORKDIR}/linux-${PV}"
