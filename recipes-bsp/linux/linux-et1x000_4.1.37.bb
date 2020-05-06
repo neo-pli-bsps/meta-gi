@@ -18,10 +18,10 @@ MACHINE_KERNEL_PR_append = ".1"
 # By default, kernel.bbclass modifies package names to allow multiple kernels
 # to be installed in parallel. We revert this change and rprovide the versioned
 # package names instead, to allow only one kernel to be installed.
-PKG_kernel-base = "kernel-base"
-PKG_kernel-image = "kernel-image"
-RPROVIDES_kernel-base = "kernel-${KERNEL_VERSION}"
-RPROVIDES_kernel-image = "kernel-image-${KERNEL_VERSION}"
+PKG_${KERNEL_PACKAGE_NAME}-base = "kernel-base"
+PKG_${KERNEL_PACKAGE_NAME}-image = "kernel-image"
+RPROVIDES_${KERNEL_PACKAGE_NAME}-base = "kernel-${KERNEL_VERSION}"
+RPROVIDES_${KERNEL_PACKAGE_NAME}-image = "kernel-image-${KERNEL_VERSION}"
 
 SRC_URI += "http://gi-et.info/et1x000/linux-${PV}-${SRC}.tar.xz \
     file://kernel-gcc6.patch \
@@ -32,6 +32,8 @@ SRC_URI += "http://gi-et.info/et1x000/linux-${PV}-${SRC}.tar.xz \
     file://0001-STV-Add-SNR-Signal-report-parameters.patch \
     file://blindscan2.patch \
     file://0001-stv090x-optimized-TS-sync-control.patch \
+    file://0002-log2-give-up-on-gcc-constant-optimizations.patch \
+    file://0003-dont-mark-register-as-const.patch \
     "
 
 S = "${WORKDIR}/linux-${PV}"
@@ -43,7 +45,7 @@ KERNEL_OBJECT_SUFFIX = "ko"
 KERNEL_IMAGEDEST = "tmp"
 KERNEL_OUTPUT = "arch/${ARCH}/boot/${KERNEL_IMAGETYPE}"
 
-FILES_kernel-image = "/${KERNEL_IMAGEDEST}/zImage"
+FILES_${KERNEL_PACKAGE_NAME}-image = "/${KERNEL_IMAGEDEST}/zImage"
 
 kernel_do_install_append() {
         install -d ${D}/${KERNEL_IMAGEDEST}
