@@ -1,6 +1,6 @@
 SRCDATE = "20170302"
 
-require initrd.inc
+require nextv-initrd.inc
 
 do_install() {
     install -d ${D}/boot

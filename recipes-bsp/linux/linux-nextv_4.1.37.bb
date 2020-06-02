@@ -23,8 +23,11 @@ PKG_${KERNEL_PACKAGE_NAME}-image = "kernel-image"
 RPROVIDES_${KERNEL_PACKAGE_NAME}-base = "kernel-${KERNEL_VERSION}"
 RPROVIDES_${KERNEL_PACKAGE_NAME}-image = "kernel-image-${KERNEL_VERSION}"
 
-SRC_URI += "http://gi-et.info/et1x000/linux-${PV}-${SRC}.tar.xz \
-    file://kernel-gcc6.patch \
+SRC_URI += "http://source.mynonpublic.com/xtrend/linux-${PV}-${SRC}.tar.xz \
+    file://kernel-add-support-for-gcc6.patch \
+    file://kernel-add-support-for-gcc7.patch \
+    file://kernel-add-support-for-gcc8.patch \
+    file://kernel-add-support-for-gcc9.patch \
     file://defconfig \
     file://0001-Support-TBS-USB-drivers-for-4.1-kernel.patch \
     file://0001-TBS-fixes-for-4.1-kernel.patch \

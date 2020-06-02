@@ -2,13 +2,13 @@ DESCRIPTION = "Linux kernel for ${MACHINE}"
 SECTION = "kernel"
 LICENSE = "GPLv2"
 
-COMPATIBLE_MACHINE = "et[7,3,8]+"
+COMPATIBLE_MACHINE = "et7000mini|xpeedc"
 
-KERNEL_RELEASE = "3.18.24"
-SRCDATE = "20160421"
+KERNEL_RELEASE = "4.1.21"
+SRCDATE = "20160408"
 
-SRC_URI[md5sum] = "76b7b50307cddf1b30ba63c16af95e52"
-SRC_URI[sha256sum] = "35ec09f2c959c891fd8916430043be11a46493844708225f64680b9d25d7411b"
+SRC_URI[md5sum] = "e7ba35d427bfa40d78cd6e23db7872a2"
+SRC_URI[sha256sum] = "88f648e462e9d37c6ed9401b33ee1dd08495e9f66b9c653aefd9fd0a4f5afb26"
 
 LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${PV}/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
@@ -22,15 +22,14 @@ PKG_${KERNEL_PACKAGE_NAME}-image = "kernel-image"
 RPROVIDES_${KERNEL_PACKAGE_NAME}-base = "kernel-${KERNEL_VERSION}"
 RPROVIDES_${KERNEL_PACKAGE_NAME}-image = "kernel-image-${KERNEL_VERSION}"
 
-SRC_URI += "http://gi-et.info/et7000mini/linux-${PV}.tar.xz \
+SRC_URI += "http://source.mynonpublic.com/xtrend/linux-${PV}.tar.xz \
+	file://kernel-add-support-for-gcc6.patch \
+	file://kernel-add-support-for-gcc7.patch \
+	file://kernel-add-support-for-gcc8.patch \
+	file://kernel-add-support-for-gcc9.patch \
+	file://0002-log2-give-up-on-gcc-constant-optimizations.patch \
+	file://0003-dont-mark-register-as-const.patch \
 	file://defconfig \
-	file://add-dmx-source-timecode.patch \
-	file://af9015-output-full-range-SNR.patch \
-	file://cxd2820r-output-full-range-SNR.patch \
-	file://fix-proc-cputype.patch \
-	file://iosched-slice_idle-1.patch \
-	file://mxl5007t-add-no_probe-and-no_reset-parameters.patch \
-	file://tda18271-advertise-supported-delsys.patch \
 	"
 
 inherit kernel machine_kernel_pr
@@ -42,6 +41,8 @@ KERNEL_OBJECT_SUFFIX = "ko"
 KERNEL_OUTPUT = "vmlinux"
 KERNEL_IMAGETYPE = "vmlinux"
 KERNEL_IMAGEDEST = "/tmp"
+
+KERNEL_EXTRA_ARGS = "EXTRA_CFLAGS=-Wno-attribute-alias"
 
 FILES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}*"
 

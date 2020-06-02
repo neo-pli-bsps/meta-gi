@@ -91,4 +91,3 @@ index ce99b9d..264c4b8 100644
  		if (STV090x_WRITE_DEMOD(state, PDELCTRL1, reg) < 0)
 -- 
 2.1.4
-
