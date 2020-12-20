@@ -23,7 +23,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS = " \
 PREFERRED_PROVIDER_virtual/kernel = "linux-nextv"
 PREFERRED_PROVIDER_virtual/blindscan-dvbc = "nextv-blindscan-dvbc-utils-${MACHINE}"
 
-MACHINE_FEATURES += "alsa usbhost wlan 3dtv switchoff osdposition hdmicec"
+MACHINE_FEATURES += "alsa usbhost wlan 3dtv switchoff osdposition hdmicec HDMI RCA"
 
 MACHINE_EXTRA_RRECOMMENDS = " \
 	gst-plugin-dvbmediasink \
@@ -57,3 +57,15 @@ IMAGE_CMD_ubi_append_mipsel = " \
 	rm -Rf ${IMAGEDIR}; \
 	rm -Rf ${IMGDEPLOYDIR}/boot; \
 	"
+
+BOX_BRAND = "ultramini"
+
+MTD_KERNEL = "mtd1"
+MTD_ROOTFS = "mtd2"
+
+SOC_FAMILY = "bcm7362"
+
+KERNEL_FILE = "kernel.bin"
+ROOTFS_FILE = "rootfs.bin"
+
+RCTYPE = "504"

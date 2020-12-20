@@ -30,7 +30,7 @@ PREFERRED_PROVIDER_virtual/libgl ?= "mesa"
 PREFERRED_PROVIDER_virtual/mesa ?= "mesa"
 PREFERRED_PROVIDER_virtual/kernel = "linux-nextv"
 
-MACHINE_FEATURES += "alsa usbhost wlan 3dtv switchoff osdposition hdmicec"
+MACHINE_FEATURES += "alsa usbhost wlan 3dtv switchoff osdposition hdmicec HDMI"
 
 MACHINE_EXTRA_RRECOMMENDS = " \
 	gst-plugin-dvbmediasink \
@@ -69,3 +69,14 @@ IMAGE_CMD_tar_prepend = "\
     rm -f ${DEPLOY_DIR_IMAGE}/.manifest; \
     rm -Rf ${IMAGEDIR}; \
 "
+
+BOX_BRAND = "xtrend"
+
+MTD_ROOTFS = "mmcblk0p4"
+MTD_KERNEL = "mmcblk0p3"
+KERNEL_FILE = "kernel.bin"
+ROOTFS_FILE = "rootfs.tar.bz2"
+
+MTD_BLACK  = "mmcblk0"
+
+BLINDSCAN_BINARY = "avl_xtrend_blindscan"
